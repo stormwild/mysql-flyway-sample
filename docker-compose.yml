@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: mysql:8.0
@@ -17,5 +15,26 @@ services:
       - ./my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - payroll_network
+
+  flyway:
+    image: flyway/flyway:latest
+    container_name: flyway
+    depends_on:
+      - db
+    entrypoint: ['/flyway/entrypoint.sh']
+    volumes:
+      - ./flyway/conf:/flyway/conf
+      - ./migrations:/flyway/sql
+      - ./entrypoint.sh:/flyway/entrypoint.sh
+    environment:
+      FLYWAY_URL: ${FLYWAY_URL}
+      FLYWAY_USER: ${FLYWAY_USER}
+      FLYWAY_PASSWORD: ${FLYWAY_PASSWORD}
+    networks:
+      - payroll_network
+
 volumes:
   payroll_data:
+
+networks:
+  payroll_network:
