@@ -119,3 +119,7 @@ What's next:
     Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug flyway
     Learn more at https://docs.docker.com/go/debug-cli/
 ```
+
+## References
+
+[Flyway Open Source Docker images](https://github.com/flyway/flyway-docker)
