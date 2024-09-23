@@ -1,0 +1,3 @@
+ALTER TABLE employees
+MODIFY first_name VARCHAR(100) NOT NULL,
+MODIFY last_name VARCHAR(100) NOT NULL;
