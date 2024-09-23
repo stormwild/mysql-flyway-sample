@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: payroll_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-payroll_db}
+      MYSQL_USER: ${MYSQL_USER:-payroll_admin}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-payroll_password}
+    ports:
+      - '3306:3306'
+    volumes:
+      - payroll_data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - payroll_network
+volumes:
+  payroll_data:
