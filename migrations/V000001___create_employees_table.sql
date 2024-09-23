@@ -1,0 +1,5 @@
+CREATE TABLE employees (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(63) NOT NULL,
+    last_name VARCHAR(63) NOT NULL
+) ENGINE=InnoDB;

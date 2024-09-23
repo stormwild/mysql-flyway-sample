@@ -120,6 +120,68 @@ What's next:
     Learn more at https://docs.docker.com/go/debug-cli/
 ```
 
+## Add an SQL migration script
+
+Create a new SQL migration script in the `migrations` folder.
+
+```sh
+$ touch migrations/V1__create_employee_table.sql
+# $ touch migrations/V0000001__create_employee_table.sql # we can also left pad or prefix the version with zeros
+# the version number should be unique and separated by two underscores from the description
+```
+
+We can check the status of the migrations.
+
+```sh
+$ docker exec -it flyway flyway info
+Flyway OSS Edition 10.18.0 by Redgate
+
+See release notes here: https://rd.gt/416ObMi
+Database: jdbc:mysql://db:3306/payroll (MySQL 8.0)
+Schema version: << Empty Schema >>
+
++-----------+---------+-------------------------+------+--------------+---------+----------+
+| Category  | Version | Description             | Type | Installed On | State   | Undoable |
++-----------+---------+-------------------------+------+--------------+---------+----------+
+| Versioned | 000001  |  create employees table | SQL  |              | Pending | No       |
++-----------+---------+-------------------------+------+--------------+---------+----------+
+```
+
+It detected the new migration script. But knows that it hasn't yet been applied and is thus in a pending state.
+
+Run the migrate command to apply the migration.
+
+```sh
+$ docker exec -it flyway flyway migrate
+Flyway OSS Edition 10.18.0 by Redgate
+
+See release notes here: https://rd.gt/416ObMi
+Database: jdbc:mysql://db:3306/payroll (MySQL 8.0)
+Successfully validated 1 migration (execution time 00:00.046s)
+Current version of schema `payroll`: << Empty Schema >>
+Migrating schema `payroll` to version "000001 -  create employees table"
+Successfully applied 1 migration to schema `payroll`, now at version v000001 (execution time 00:00.210s)
+```
+
+![](./mysql-shell-output.png)
+
+The migration script has been applied successfully.
+
+| Field          | Value                                |
+|----------------|--------------------------------------|
+| installed_rank | 1                                    |
+| version        | 000001                               |
+| description    | create employees table               |
+| type           | SQL                                  |
+| script         | V000001___create_employees_table.sql |
+| checksum       | -514591778                           |
+| installed_by   | payroll_admin                        |
+| installed_on   | 2024-09-23 07:41:33                  |
+| execution_time | 210                                  |
+| success        | 1                                    |
+
 ## References
 
 [Flyway Open Source Docker images](https://github.com/flyway/flyway-docker)
+
+[MySQL Continuous Database Delivery with Flyway | Pluralsight](https://www.pluralsight.com/courses/mysql-flyway-continuous-database-delivery)
