@@ -185,3 +185,9 @@ The migration script has been applied successfully.
 [Flyway Open Source Docker images](https://github.com/flyway/flyway-docker)
 
 [MySQL Continuous Database Delivery with Flyway | Pluralsight](https://www.pluralsight.com/courses/mysql-flyway-continuous-database-delivery)
+
+[Data Points - Hybrid Database Migrations with EF Core and Flyway | Microsoft Learn](https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/october/data-points-hybrid-database-migrations-with-ef-core-and-flyway)
+
+[Working with Flyway And Entity Framework Code First: An Overview | Redgate](https://www.red-gate.com/hub/product-learning/flyway/working-with-flyway-and-entity-framework-code-first-an-overview)
+
+
