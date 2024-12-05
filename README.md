@@ -190,4 +190,6 @@ The migration script has been applied successfully.
 
 [Working with Flyway And Entity Framework Code First: An Overview | Redgate](https://www.red-gate.com/hub/product-learning/flyway/working-with-flyway-and-entity-framework-code-first-an-overview)
 
+[Working with Flyway and Entity Framework Code First: Automation | Redgate](https://www.red-gate.com/hub/product-learning/flyway/working-with-flyway-and-entity-framework-code-first-automation)
 
+[EFCore2FlywayDesktop/Scripts at main · promicroNL/EFCore2FlywayDesktop](https://github.com/promicroNL/EFCore2FlywayDesktop/tree/main/Scripts)
