@@ -193,3 +193,7 @@ The migration script has been applied successfully.
 [Working with Flyway and Entity Framework Code First: Automation | Redgate](https://www.red-gate.com/hub/product-learning/flyway/working-with-flyway-and-entity-framework-code-first-automation)
 
 [EFCore2FlywayDesktop/Scripts at main · promicroNL/EFCore2FlywayDesktop](https://github.com/promicroNL/EFCore2FlywayDesktop/tree/main/Scripts)
+
+[SQL Server Continuous Database Delivery with Flyway | Pluralsight](https://app.pluralsight.com/library/courses/sql-server-flyway-continuous-database-delivery/table-of-contents)
+
+
