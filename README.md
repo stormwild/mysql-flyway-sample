@@ -43,6 +43,8 @@ time="2024-09-23T14:26:38+08:00" level=warning msg="Found orphan containers ([my
  ✔ Container flyway      Started                                                      0.5s                                                                                                                               0.4s 
 ```
 
+Docker Desktop will show the running containers.
+
 ![](./docker-desktop.png)
 
 Sample logs
